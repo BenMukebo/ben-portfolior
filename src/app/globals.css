@@ -4,7 +4,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --brand: #c9fa22;
+    --brand-foreground: #c9fa22; /* 74 96 56  // 0% 100%; */
+
+    --background: #101010; /* 0 0% 100%; */
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -16,8 +19,14 @@
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: #212121; /*  210 40% 96.1%; */
+    --secondary-foreground: #212121; /* 222.2 47.4% 11.2%; */
+
+    --white: #ffffff;
+    --white-foreground: #ffffff;
+    --white-light: #ffffffcc;
+    --white-fade-5: #ffffff0d;
+    --white-fade-10: #ffffff1a;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -68,9 +77,34 @@
 
 @layer base {
   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Inter", sans-serif; */
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.flex__center {
+  @apply flex justify-center items-center;
+}
+
+.flex__between {
+  @apply flex justify-between items-center;
+}
+
+.header__h1 {
+  @apply text-6xl font-bold md:text-88 xl:text-112;
+}
+
+.border__fade__5 {
+  @apply border border-solid border-white-fade-5;
+}
+
+.border__fade__10 {
+  @apply border border-solid border-white-fade-10;
 }
