@@ -30,13 +30,6 @@ const config = {
     extend: {
       colors: {
         border: "hsl(var(--border))",
-        // "thin-10": "var(--white-fade-10)",
-        // border: {
-        //   DEFAULT: "hsl(var(--border))",
-        //   light: "hsl(var(--border-light))",
-        //   dark: "hsl(var(--border-dark))",
-        //   thin: "var(--border-thin)"
-        // },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "var(--background)",
@@ -59,6 +52,12 @@ const config = {
           light: "var(--white-light)",
           "fade-5": "var(--white-fade-5)",
           "fade-10": "var(--white-fade-10)",
+        },
+        black: {
+          DEFAULT: "var(--black)",
+          foreground: "var(--black-foreground)",
+          "fade-5": "var(--black-fade-5)",
+          "fade-15": "var(--black-fade-15)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -86,6 +85,10 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+        'border-15': '0px 10px 25px 0px var(--black-fade-15)',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -101,26 +104,14 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontSize: {
-        // 12: '0.75rem',
-        // 14: '0.875rem',
-        // 16: '1rem',
-        // 18: '1.125rem',
-        // 20: '1.25rem',
-        // 22: '1.375rem',
-        // 24: '1.5rem',
-        // 28: '1.75rem',
-        // 30: '1.875rem',
+        sm: ['14px', '20px'],
+        base: ['16px', '24px'],
+        18: ['18px', '27px'],
+        lg: ['20px', '28px'],
+        xl: ['24px', '32px'],
+        24: '1.5rem',
         32: '2rem',
-        // 40: '2.5rem',
-        // 42: '2.625rem',
-        // 44: '2.75rem',
-        // 48: '3rem',
-        // 52: '3.25rem',
-        // 60: '3.75rem',
-        // 64: '4rem',
-        // 72: '4.5rem',
-        // 76: '4.75rem',
-        // 80: '5rem',
+
         88: '5.5rem',
         112: '7rem',
       },
@@ -130,11 +121,6 @@ const config = {
         96: '6rem',
       },
       spacing: {
-        // auto: 'auto',
-        // 0: '0',
-        // 2: '0.125rem',
-        // 4: '0.25rem',
-        // 6: '0.375rem',
         18: '1.125rem',
         72: '4.5rem',
         76: '4.75rem',

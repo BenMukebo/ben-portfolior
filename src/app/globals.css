@@ -27,6 +27,12 @@
     --white-light: #ffffffcc;
     --white-fade-5: #ffffff0d;
     --white-fade-10: #ffffff1a;
+    --white-fade-15: #ffffff26;
+
+    --black-foreground: #101010;
+    --black-fade-5: #1010100d;
+    --black-fade-10: #1010101a;
+    --black-fade-15: #00000026;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -44,8 +50,8 @@
     --radius: 0.5rem;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
+  .light {
+    --background: #ffffff;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -57,8 +63,16 @@
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: var(--white);
     --secondary-foreground: 210 40% 98%;
+
+    /* --white: #ffffff; */
+    --white-foreground: var(--black-foreground);
+    --white-light: var(--black-foreground);
+    --white-fade-5: var(--black-fade-5);
+    --white-fade-10: var(--black-fade-10);
+
+    --black-fade-15: var(--white-fade-15);
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -95,6 +109,10 @@
 
 .flex__between {
   @apply flex justify-between items-center;
+}
+
+.flex__column {
+  @apply flex flex-col;
 }
 
 .header__h1 {
