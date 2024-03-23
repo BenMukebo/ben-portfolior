@@ -101,6 +101,31 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--white-light);
+    box-shadow: inset 0 0 5px var(--black-fade-5);
+    border-radius: 100vw;
+    margin-block: 0.2rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--brand), var(--black-foreground));
+    border-radius: 100vw;
+    height: 40vh; /*for vertical scrollbar */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      var(--black-foreground),
+      var(--brand),
+      var(--brand)
+    );
+  }
 }
 
 .flex__center {
@@ -117,6 +142,10 @@
 
 .header__h1 {
   @apply text-6xl font-bold md:text-88 xl:text-112;
+}
+
+.header__h2 {
+  @apply text-52 font-medium md:text-6xl;
 }
 
 .border__fade__5 {
