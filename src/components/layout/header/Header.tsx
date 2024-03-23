@@ -43,7 +43,7 @@ export const Header = () => {
             </h2>
           </div>
 
-          <nav className="h-14 flex items-center justify-between">
+          <nav className="h-14 hidden sm:flex justify-between items-center">
             <div className="h-full flex items-center gap-x-2">
               {/* {!isOpen && ( */}
               <ul className={cn("h-full flex items-center text-center p-2 gap-1 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15 xl:flex", {
@@ -105,11 +105,11 @@ export const Header = () => {
 
         {/* Mobile Menu Panel */}
 
-        <div className={cn("py-6 px-16 xl:hidden", {
+        <div className={cn("py-6 px-6 xm:px-8 sm:px-16 xl:hidden", {
           'hidden': !isOpen,
         })}>
-          <div className="flex justify-between gap-4">
-            <ul className="flex__column gap-2">
+          <div className="flex justify-between flex-wrap gap-6">
+            <ul className="w-[168px] flex__column gap-2">
               <h6 className="text-sm leading-6 font-normal text-white-light mb-1">
                 Menu
               </h6>
@@ -125,9 +125,9 @@ export const Header = () => {
               ))}
             </ul>
 
-            <ul className="flex__column gap-2">
+            <ul className="w-[168px] flex__column gap-2">
               <h6 className="text-sm leading-6 font-normal text-white-light mb-1">
-                Get in touch
+                Socials
               </h6>
 
               {socialItems.map((item, index) => (
@@ -135,6 +135,7 @@ export const Header = () => {
                   <Link
                     href={item.link}
                     className="text-white-foreground"
+                    target='_blank'
                   >
                     {item.label}
                   </Link>
