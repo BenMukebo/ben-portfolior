@@ -32,11 +32,10 @@ export const Header = () => {
         // 'bg-white-fade-5': !isOpen,
         'h-auto xl:h-auto bg-secondary rounded-[32px]': isOpen,
       })}>
-
-        <div className="h-14 flex__between gap-x-1">
+        <div className="h-full flex__between gap-x-1">
           <div className="flex items-center gap-3 flex-1">
             <Link href="/" className="w-14 h-14">
-              <Image src="/images/logo.svg" alt="Ben Mukebologo" width={56} height={56} />
+              <Image src="/images/logo.svg" alt="Ben Mukebologo" width={1000} height={1000} className='w-full h-full' />
             </Link>
             <h2 className="hidden md:block text-white-foreground text-32 font-medium">
               Ben <span className="text-white-light">Mukebo</span>
@@ -147,7 +146,7 @@ export const Header = () => {
               <h6 className="text-sm leading-6 font-normal text-white-light mb-1">
                 Get in touch
               </h6>
-              <li className="text-18 font-normal text-white-foreground">
+              <li className="text-18 font-normal text-white-foreground break-all">
                 <p className="">l.benkasmukebo7@gmail.com</p>
               </li>
               <li className="text-18 font-normal text-white-foreground">
