@@ -12,6 +12,8 @@ import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
 import { MenuItemI, menuItems, socialItems } from './constants';
 import { Themes } from '@/enums/shared.enum';
+import { Route } from "@/types/routes";
+
 
 export const Header = () => {
   const { theme, setTheme } = useTheme()
@@ -28,7 +30,7 @@ export const Header = () => {
 
   return (
     <header className="w-full sticky top-0 z-3 p-4 md:px-8">
-      <div className={cn("w-full max-w-[1182px] mx-auto h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15", {
+      <div className={cn("w-full max-w-7xl mx-auto h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15", {
         // 'bg-white-fade-5': !isOpen,
         'h-auto xl:h-auto bg-secondary rounded-[32px]': isOpen,
       })}>
@@ -49,13 +51,13 @@ export const Header = () => {
                 'hidden': isOpen,
               })}>
                 <li className="w-20 h-10 text-sm bg-white-fade-5 border__fade__5 rounded-[256px]">
-                  <Link href="/" className="w-full h-full flex__center text-white-foreground">About</Link>
+                  <Link href={Route.HOME} className="w-full h-full flex__center text-white-foreground">About</Link>
                 </li>
                 <li className="w-20 h-10 text-sm rounded-[256px]">
-                  <Link href="/about" className="w-full h-full flex__center text-white-foreground">Work</Link>
+                  <Link href={Route.WORK} className="w-full h-full flex__center text-white-foreground">Work</Link>
                 </li>
                 <li className="w-20 h-10 text-sm rounded-[256px]">
-                  <Link href="/contact" className="w-full h-full flex__center text-white-foreground">Blog</Link>
+                  <Link href={Route.BLOG} className="w-full h-full flex__center text-white-foreground">Blog</Link>
                 </li>
               </ul>
               {/* )} */}
@@ -116,7 +118,7 @@ export const Header = () => {
                 <li key={index} className="text-xl leading-6">
                   <Link
                     href={item.link}
-                    className="text-white-foreground"
+                    className="text-white-foreground hover:text-brand-foreground"
                   >
                     {item.label}
                   </Link>
@@ -133,7 +135,7 @@ export const Header = () => {
                 <li key={index} className="text-lg font-normal">
                   <Link
                     href={item.link}
-                    className="text-white-foreground"
+                    className="text-white-foreground hover:text-brand-foreground"
                     target='_blank'
                   >
                     {item.label}
