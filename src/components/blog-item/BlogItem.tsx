@@ -26,16 +26,17 @@ export const BlogItem = ({ article }: BlogProps) => {
           <p className="text-14 leading-6 text-brand-foreground">
             {article.publishDate}
           </p>
-          <h4 className="text-32 leading-8 font-medium text-white-foreground">
+          <h3 className="header__h3">
             {article.title}
-          </h4>
-          <p className="text-18 text-white-light">
+          </h3>
+          <p className="text-lg text-white-light">
             {article.description}
           </p>
 
           <Button
             variant="secondary"
-            className="w-[201px] h-52 p-2 text-24 leading-9 gap-[2px] rounded-[256px]"
+            size="lg"
+          // className="w-[201px] h-52 p-2 text-xl gap-[2px] rounded-[256px]"
           >
             Have a read
             <ArrowTopRightIcon className="h-18 w-18" />

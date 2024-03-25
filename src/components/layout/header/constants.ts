@@ -1,11 +1,11 @@
 import { Route } from "@/types/routes";
 
-export interface MenuItemProps {
+export interface MenuItemI {
   label: string;
   link: Route | string;
 }
 
-export const menuItems: MenuItemProps[] = [
+export const menuItems: MenuItemI[] = [
   // {
   //   label: "Home",
   //   link: Route.HOME,
@@ -28,7 +28,7 @@ export const menuItems: MenuItemProps[] = [
   }
 ]
 
-export const socialItems: MenuItemProps[] = [
+export const socialItems: MenuItemI[] = [
   {
     label: "LinkedIn",
     link: "https://www.linkedin.com/in/kasongo-mukebo-ben",

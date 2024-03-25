@@ -141,13 +141,16 @@
 }
 
 .header__h1 {
-  @apply text-6xl font-bold md:text-88 xl:text-112;
+  @apply text-6xl font-bold -tracking-[0.03em] md:text-88 xl:text-112;
 }
 
 .header__h2 {
   @apply text-52 font-medium md:text-6xl;
 }
 
+.header__h3 {
+  @apply text-32 leading-8 font-medium text-white-foreground;
+}
 .border__fade__5 {
   @apply border border-solid border-white-fade-5;
 }

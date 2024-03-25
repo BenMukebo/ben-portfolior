@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 // import { MoonIcon, SunIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { menuItems, socialItems } from './constants';
+import { MenuItemI, menuItems, socialItems } from './constants';
 import { Themes } from '@/enums/shared.enum';
 
 export const Header = () => {
@@ -27,8 +27,8 @@ export const Header = () => {
   // }
 
   return (
-    <header className="w-full sticky top-0 z-3 p-4 md:px-8 max-w-[1182px] mx-auto">
-      <div className={cn("w-full h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15", {
+    <header className="w-full sticky top-0 z-3 p-4 md:px-8">
+      <div className={cn("w-full max-w-[1182px] mx-auto h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15", {
         // 'bg-white-fade-5': !isOpen,
         'h-auto xl:h-auto bg-secondary rounded-[32px]': isOpen,
       })}>
@@ -113,7 +113,7 @@ export const Header = () => {
                 Menu
               </h6>
               {menuItems.map((item, index) => (
-                <li key={index} className="text-24 leading-6">
+                <li key={index} className="text-xl leading-6">
                   <Link
                     href={item.link}
                     className="text-white-foreground"
@@ -129,8 +129,8 @@ export const Header = () => {
                 Socials
               </h6>
 
-              {socialItems.map((item, index) => (
-                <li key={index} className="text-18 font-normal">
+              {socialItems.map((item: MenuItemI, index) => (
+                <li key={index} className="text-lg font-normal">
                   <Link
                     href={item.link}
                     className="text-white-foreground"
@@ -146,16 +146,16 @@ export const Header = () => {
               <h6 className="text-sm leading-6 font-normal text-white-light mb-1">
                 Get in touch
               </h6>
-              <li className="text-18 font-normal text-white-foreground break-all">
+              <li className="text-lg font-normal text-white-foreground break-all">
                 <p className="">l.benkasmukebo7@gmail.com</p>
               </li>
-              <li className="text-18 font-normal text-white-foreground">
-                <p className="">+243 973 000 000</p>
+              <li className="text-lg font-normal text-white-foreground">
+                <p className="">+250 784 165 613</p>
               </li>
               <li className="">
                 <Button
                   variant="ghost"
-                  className="text-xl font-medium text-brand-foreground"
+                  className="text-xl leading-6 font-medium text-brand-foreground"
                 >
                   Download CV
                 </Button>
