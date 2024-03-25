@@ -10,6 +10,17 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Route } from "@/types/routes";
 import { Themes } from '@/enums/shared.enum';
 
+import { Testimonial } from "@/components";
+import { TestimonialI, testimonialsData } from "@/components/testimonial/constants";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 function Home() {
   const { theme, setTheme } = useTheme()
   const isDarkMode: boolean = theme === Themes.Dark;
@@ -65,6 +76,44 @@ function Home() {
         </div>
 
         {/* <Button>Click me</Button> */}
+      </section>
+
+      <section className="w-full">
+        <div className="flex__between flex-wrap gap-1 mb-16">
+          <h2 className="header__h2 text-white-foreground">Testimonial</h2>
+
+          <Link
+            href="https://www.linkedin.com/in/kasongo-mukebo-ben/details/recommendations/?detailScreenTabIndex=0"
+            className="flex__center text-18 text-white-foreground p-4"
+            target='_blank'
+          >
+            <span>View Recommendations</span>
+            <ArrowTopRightIcon className="h-18 w-18" />
+          </Link>
+        </div>
+
+        <Carousel
+          className="w-full max-w-7xl"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+        >
+          {/* <ul className="w-full flex flex-wrap gap-4"> */}
+          <CarouselContent className="">
+            {testimonialsData.map((testimonial: TestimonialI, index) => (
+              <CarouselItem key={index} className="md:basis-1/1 xl:basis-1/2">
+                <Testimonial tertimonial={testimonial} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {/* </ul> */}
+          {/* <CarouselPrevious className="top-full right-1/3" />
+          <CarouselNext className="top-full right-1/3" /> */}
+        </Carousel>
       </section>
     </div>
   );
