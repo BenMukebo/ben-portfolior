@@ -10,7 +10,8 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Route } from "@/types/routes";
 import { Themes } from '@/enums/shared.enum';
 
-import { Testimonial } from "@/components";
+import { BlogItem, Testimonial } from "@/components";
+import { ArticleI, blockArticlesData } from "@/components/blog-item/constants";
 import { TestimonialI, testimonialsData } from "@/components/testimonial/constants";
 
 import {
@@ -114,6 +115,28 @@ function Home() {
           {/* <CarouselPrevious className="top-full right-1/3" />
           <CarouselNext className="top-full right-1/3" /> */}
         </Carousel>
+      </section>
+
+      <section className="w-full">
+        <div className="flex__between flex-wrap gap-1 mb-16">
+          <h2 className="header__h2 text-white-foreground">
+            Personal Insights
+          </h2>
+
+          <Link
+            href={Route.BLOG}
+            className="flex__center text-18 text-white-foreground p-4"
+          >
+            <span>Visit My Blog</span>
+            <ArrowTopRightIcon className="h-18 w-18" />
+          </Link>
+        </div>
+
+        <ul className="w-full flex__column gap-8">
+          {blockArticlesData.slice(0, 2).map((article: ArticleI) => (
+            <BlogItem key={article.id} article={article} />
+          ))}
+        </ul>
       </section>
     </div>
   );
