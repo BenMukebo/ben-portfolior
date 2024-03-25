@@ -3,12 +3,17 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 import { Route } from "@/types/routes";
+import { Themes } from '@/enums/shared.enum';
 
 function Home() {
+  const { theme, setTheme } = useTheme()
+  const isDarkMode: boolean = theme === Themes.Dark;
+
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
@@ -31,13 +36,22 @@ function Home() {
 
         <div className="relative w-full bg-white-fade-5 border__fade__10 rounded-[32px]">
           <div className="w-full max-w-[880px] h-[625px] mx-auto">
-            <Image
-              src="/images/ben-mukebo.svg"
-              alt="Picture of the author"
-              width={1000}
-              height={1000}
-              className="w-full h-full object-cover object-top rounded-bl-[32px] rounded-br-[32px]"
-            />
+            {isDarkMode ? (
+              <Image
+                src="/images/ben-mukebo.svg"
+                alt="Picture of the author"
+                width={1000}
+                height={1000}
+                className="w-full h-full object-cover object-top rounded-bl-[32px] rounded-br-[32px]"
+              />
+            ) : (
+              <Image
+                src="/images/ben-mukebo-black.svg"
+                alt="Picture of the author Black"
+                width={1000}
+                height={1000}
+                className="w-full h-full object-cover object-top rounded-bl-[32px] rounded-br-[32px]"
+              />)}
           </div>
           <div className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] absolute top-6 right-2 md:w-[213px] md:h-[213px] md:top-9 md:right-9 xl:top-12 xl:right-14">
             <Image
