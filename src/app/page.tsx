@@ -10,7 +10,7 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Route } from "@/types/routes";
 import { Themes } from '@/enums/shared.enum';
 
-import { BlogItem, Testimonial } from "@/components";
+import { BlogItem, LetsTalk, Testimonial } from "@/components";
 import { ArticleI, blockArticlesData } from "@/components/blog-item/constants";
 import { TestimonialI, testimonialsData } from "@/components/testimonial/constants";
 
@@ -31,14 +31,14 @@ function Home() {
   );
 
   return (
-    <div className="px-4 flex__column gap-y-16 md:gap-y-24 bg-background md:px-8 max-w-[1182px] mx-auto">
-      <section className="w-full h-full pt-12">
+    <div className="flex__column gap-16 md:gap-24 pt-12 pb-8 px-4 md:px-8 max-w-screen-xxxl mx-auto ">
+      <section className="w-full max-w-7xl mx-auto">
         <div className="mb-16">
           <h1 className="header__h1 pb-6 text-white-foreground">
             Hello <span className="scale-y-110">👋</span> ! I am Ben Mukebo, a
             full stack developer.
           </h1>
-          <p className="text-white-light text-lg xl:text-2xl xl:leading-9">
+          <p className="text-white-light text-lg xl:text-xl">
             I am here to help bring your digital ideas to life with a passion
             for turning concepts into impactful digital experiences. Whether
             it&apos;s building product features or creating dynamic websites,
@@ -79,13 +79,13 @@ function Home() {
         {/* <Button>Click me</Button> */}
       </section>
 
-      <section className="w-full">
+      <section className="w-full max-w-7xl mx-auto">
         <div className="flex__between flex-wrap gap-1 mb-16">
           <h2 className="header__h2 text-white-foreground">Testimonial</h2>
 
           <Link
             href="https://www.linkedin.com/in/kasongo-mukebo-ben/details/recommendations/?detailScreenTabIndex=0"
-            className="flex__center text-18 text-white-foreground p-4"
+            className="flex__center text-lg text-white-foreground p-4"
             target='_blank'
           >
             <span>View Recommendations</span>
@@ -117,7 +117,7 @@ function Home() {
         </Carousel>
       </section>
 
-      <section className="w-full">
+      <section className="w-full max-w-7xl mx-auto">
         <div className="flex__between flex-wrap gap-1 mb-16">
           <h2 className="header__h2 text-white-foreground">
             Personal Insights
@@ -125,7 +125,7 @@ function Home() {
 
           <Link
             href={Route.BLOG}
-            className="flex__center text-18 text-white-foreground p-4"
+            className="flex__center text-lg text-white-foreground p-4"
           >
             <span>Visit My Blog</span>
             <ArrowTopRightIcon className="h-18 w-18" />
@@ -138,6 +138,9 @@ function Home() {
           ))}
         </ul>
       </section>
+
+      <LetsTalk />
+
     </div>
   );
 }
