@@ -10,7 +10,7 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Route } from "@/types/routes";
 import { Themes } from '@/enums/shared.enum';
 
-import { BlogItem, LetsTalk, Testimonial } from "@/components";
+import { BlogItem, LetsTalk, ProjectCard, Testimonial } from "@/components";
 import { ArticleI, blockArticlesData } from "@/components/blog-item/constants";
 import { TestimonialI, testimonialsData } from "@/components/testimonial/constants";
 
@@ -21,6 +21,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ProjectCardI, workedProjects } from "@/components/project-card/constants";
 
 function Home() {
   const { theme, setTheme } = useTheme()
@@ -135,6 +136,28 @@ function Home() {
         <ul className="w-full flex__column gap-8">
           {blockArticlesData.slice(0, 2).map((article: ArticleI) => (
             <BlogItem key={article.id} article={article} />
+          ))}
+        </ul>
+      </section>
+
+      <section className="w-full max-w-7xl mx-auto">
+        <div className="flex__between flex-wrap gap-1 mb-16">
+          <h2 className="header__h2 text-white-foreground">
+            Featured Works
+          </h2>
+
+          <Link
+            href={Route.WORK}
+            className="flex__center text-lg text-white-foreground p-4"
+          >
+            <span>View All Projects</span>
+            <ArrowTopRightIcon className="h-18 w-18" />
+          </Link>
+        </div>
+
+        <ul className="w-full max-w-5xl mx-auto flex__column gap-8 xl:max-w-none">
+          {workedProjects.slice(0, 2).map((project: ProjectCardI) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </ul>
       </section>
