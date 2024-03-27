@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { usePathname } from 'next/navigation'
 import { useTheme } from "next-themes"
 
 import { BurgerMenuIcon, ClosedIcon, MoonIcon, SunIcon } from '@/components/shared/icons';
@@ -10,15 +10,17 @@ import { Button } from '@/components/ui/button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 // import { MoonIcon, SunIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { MenuItemI, menuItems, socialItems } from './constants';
 import { Themes } from '@/enums/shared.enum';
 import { Route } from "@/types/routes";
+import { NavMenuI, deskMenuItems, mobileMenuItems, socialItems } from './constants';
 
 
 export const Header = () => {
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme()
+
   const isDarkMode: boolean = theme === Themes.Dark;
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -36,7 +38,7 @@ export const Header = () => {
       })}>
         <div className="h-full flex__between gap-x-1">
           <div className="flex items-center gap-3 flex-1">
-            <Link href="/" className="w-14 h-14">
+            <Link href={Route.HOME} className="w-14 h-14">
               <Image src="/images/logo.svg" alt="Ben Mukebologo" width={1000} height={1000} className='w-full h-full' />
             </Link>
             <h2 className="hidden md:block text-white-foreground text-32 font-medium">
@@ -50,15 +52,18 @@ export const Header = () => {
               <ul className={cn("h-full flex items-center text-center p-2 gap-1 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15 xl:flex", {
                 'hidden': isOpen,
               })}>
-                <li className="w-20 h-10 text-sm bg-white-fade-5 border__fade__5 rounded-[256px]">
-                  <Link href={Route.HOME} className="w-full h-full flex__center text-white-foreground">About</Link>
-                </li>
-                <li className="w-20 h-10 text-sm rounded-[256px]">
-                  <Link href={Route.WORK} className="w-full h-full flex__center text-white-foreground">Work</Link>
-                </li>
-                <li className="w-20 h-10 text-sm rounded-[256px]">
-                  <Link href={Route.BLOG} className="w-full h-full flex__center text-white-foreground">Blog</Link>
-                </li>
+                {deskMenuItems.map((item, index) => (
+                  <li key={index} className={cn("w-20 h-10 text-sm rounded-[256px]", {
+                    'bg-white-fade-5 border__fade__5': (pathname === '/' && item.link === '/#about') || pathname === item.link,
+                  })}>
+                    <Link
+                      href={item.link}
+                      className="w-full h-full flex__center text-white-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
               {/* )} */}
 
@@ -114,11 +119,13 @@ export const Header = () => {
               <h6 className="text-sm leading-6 font-normal text-white-light mb-1">
                 Menu
               </h6>
-              {menuItems.map((item, index) => (
-                <li key={index} className="text-xl leading-6">
+              {mobileMenuItems.map((item: NavMenuI) => (
+                <li key={item.label} className="text-xl leading-6">
                   <Link
                     href={item.link}
-                    className="text-white-foreground hover:text-brand-foreground"
+                    className={cn("text-white-foreground hover:text-brand-foreground", {
+                      'text-brand-foreground': (pathname === '/' && item.link === '/#about') || pathname === item.link,
+                    })}
                   >
                     {item.label}
                   </Link>
@@ -131,7 +138,7 @@ export const Header = () => {
                 Socials
               </h6>
 
-              {socialItems.map((item: MenuItemI, index) => (
+              {socialItems.map((item: NavMenuI, index) => (
                 <li key={index} className="text-lg font-normal">
                   <Link
                     href={item.link}
