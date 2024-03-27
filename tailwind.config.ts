@@ -25,11 +25,22 @@ const config = {
       lg: '992px',
       xl: '1280px',
       xxl: '1480px',
-      xxxl: '1560px',
+      xxxl: '1570px',
     },
     extend: {
+      backgroundImage: {
+        // 'hero-pattern': "url('/img/hero-pattern.svg')",
+        // 'lets-talk-gradient': "url('/images/lets-talk-gradient.svg')",
+      },
       colors: {
         border: "hsl(var(--border))",
+        // "thin-10": "var(--white-fade-10)",
+        // border: {
+        //   DEFAULT: "hsl(var(--border))",
+        //   light: "hsl(var(--border-light))",
+        //   dark: "hsl(var(--border-dark))",
+        //   thin: "var(--border-thin)"
+        // },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "var(--background)",
@@ -121,12 +132,7 @@ const config = {
         40: ['2.5rem', '2.5rem'],
         52: ['3.25rem', '3.25rem'],
         60: ['3.75rem', '3.75rem'],
-        // 64: '4rem',
-        // 72: '4.5rem',
-        // 76: '4.75rem',
-        // 80: '5rem',
         88: ['5.5rem', '5.5rem'],
-        // 96: ['6rem', '6rem'],
         112: ['7rem', '7rem'],
       },
       lineHeight: {
@@ -134,13 +140,7 @@ const config = {
         72: '4.5rem',
       },
       spacing: {
-        // auto: 'auto',
-        // 1: '1px',
-        // 2: '0.125rem',
-        // 4: '0.25rem',
-        // 6: '0.375rem',
         18: '1.125rem',
-        // 25: '1.5625rem',
         52: '3.25rem',
         72: '4.5rem',
         76: '4.75rem',

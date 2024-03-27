@@ -21,7 +21,7 @@ export const Testimonial = ({ tertimonial }: TestimonialProps) => {
       </h4>
       <div className="flex items-center flex-wrap gap-x-2 text-sm leading-6">
         <p className="">{tertimonial.position}</p>
-        <p className="w-1 h-1 bg-brand rounded-full"></p>
+        <div className="w-1.5 h-1.5 bg-brand rounded-full" />
         <p>{tertimonial.location}</p>
 
         {/* </div> */}
