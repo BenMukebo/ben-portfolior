@@ -1,6 +1,6 @@
 export enum Route {
   HOME = '/',
-  ABOUT = '/about',
+  ABOUT = '/#about',
   WORK = '/work',
   BLOG = '/blog',
   CONTACT = '/contact',

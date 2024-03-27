@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { usePathname } from 'next/navigation'
 import { useTheme } from "next-themes"
 
 import { BurgerMenuIcon, ClosedIcon, MoonIcon, SunIcon } from '@/components/shared/icons';
@@ -10,13 +10,17 @@ import { Button } from '@/components/ui/button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 // import { MoonIcon, SunIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { menuItems, socialItems } from './constants';
 import { Themes } from '@/enums/shared.enum';
+import { Route } from "@/types/routes";
+import { NavMenuI, deskMenuItems, mobileMenuItems, socialItems } from './constants';
+
 
 export const Header = () => {
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme()
+
   const isDarkMode: boolean = theme === Themes.Dark;
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -27,14 +31,14 @@ export const Header = () => {
   // }
 
   return (
-    <header className="w-full sticky top-0 z-3 p-4 md:px-8 max-w-[1182px] mx-auto">
-      <div className={cn("w-full h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15", {
+    <header className="w-full sticky top-0 z-3 p-4 md:px-8">
+      <div className={cn("w-full max-w-7xl mx-auto h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15", {
         // 'bg-white-fade-5': !isOpen,
         'h-auto xl:h-auto bg-secondary rounded-[32px]': isOpen,
       })}>
         <div className="h-full flex__between gap-x-1">
           <div className="flex items-center gap-3 flex-1">
-            <Link href="/" className="w-14 h-14">
+            <Link href={Route.HOME} className="w-14 h-14">
               <Image src="/images/logo.svg" alt="Ben Mukebologo" width={1000} height={1000} className='w-full h-full' />
             </Link>
             <h2 className="hidden md:block text-white-foreground text-32 font-medium">
@@ -48,15 +52,18 @@ export const Header = () => {
               <ul className={cn("h-full flex items-center text-center p-2 gap-1 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15 xl:flex", {
                 'hidden': isOpen,
               })}>
-                <li className="w-20 h-10 text-sm bg-white-fade-5 border__fade__5 rounded-[256px]">
-                  <Link href="/" className="w-full h-full flex__center text-white-foreground">About</Link>
-                </li>
-                <li className="w-20 h-10 text-sm rounded-[256px]">
-                  <Link href="/about" className="w-full h-full flex__center text-white-foreground">Work</Link>
-                </li>
-                <li className="w-20 h-10 text-sm rounded-[256px]">
-                  <Link href="/contact" className="w-full h-full flex__center text-white-foreground">Blog</Link>
-                </li>
+                {deskMenuItems.map((item, index) => (
+                  <li key={index} className={cn("w-20 h-10 text-sm rounded-[256px]", {
+                    'bg-white-fade-5 border__fade__5': (pathname === '/' && item.link === '/#about') || pathname === item.link,
+                  })}>
+                    <Link
+                      href={item.link}
+                      className="w-full h-full flex__center text-white-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
               {/* )} */}
 
@@ -112,11 +119,13 @@ export const Header = () => {
               <h6 className="text-sm leading-6 font-normal text-white-light mb-1">
                 Menu
               </h6>
-              {menuItems.map((item, index) => (
-                <li key={index} className="text-24 leading-6">
+              {mobileMenuItems.map((item: NavMenuI) => (
+                <li key={item.label} className="text-xl leading-6">
                   <Link
                     href={item.link}
-                    className="text-white-foreground"
+                    className={cn("text-white-foreground hover:text-brand-foreground", {
+                      'text-brand-foreground': (pathname === '/' && item.link === '/#about') || pathname === item.link,
+                    })}
                   >
                     {item.label}
                   </Link>
@@ -129,11 +138,11 @@ export const Header = () => {
                 Socials
               </h6>
 
-              {socialItems.map((item, index) => (
-                <li key={index} className="text-18 font-normal">
+              {socialItems.map((item: NavMenuI, index) => (
+                <li key={index} className="text-lg font-normal">
                   <Link
                     href={item.link}
-                    className="text-white-foreground"
+                    className="text-white-foreground hover:text-brand-foreground"
                     target='_blank'
                   >
                     {item.label}
@@ -146,16 +155,16 @@ export const Header = () => {
               <h6 className="text-sm leading-6 font-normal text-white-light mb-1">
                 Get in touch
               </h6>
-              <li className="text-18 font-normal text-white-foreground break-all">
+              <li className="text-lg font-normal text-white-foreground break-all">
                 <p className="">l.benkasmukebo7@gmail.com</p>
               </li>
-              <li className="text-18 font-normal text-white-foreground">
-                <p className="">+243 973 000 000</p>
+              <li className="text-lg font-normal text-white-foreground">
+                <p className="">+250 784 165 613</p>
               </li>
               <li className="">
                 <Button
                   variant="ghost"
-                  className="text-xl font-medium text-brand-foreground"
+                  className="text-xl leading-6 font-medium text-brand-foreground"
                 >
                   Download CV
                 </Button>
