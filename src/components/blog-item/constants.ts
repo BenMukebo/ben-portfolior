@@ -29,7 +29,7 @@ export const blockArticlesData: ArticleI[] = [
   {
     id: 3,
     title: "Preventing SQL Injection for Rails Queries",
-    // image: "https://randomuser.me/api",
+    // image: "/images/block/sql-injection.svg",
     publishDate: "Jan 21, 2023",
     link: "https://benmukebo.medium.com/how-to-prevent-sql-injection-writing-your-queries-in-rails-3b379cb8f17f",
     description:
@@ -38,7 +38,7 @@ export const blockArticlesData: ArticleI[] = [
   {
     id: 4,
     title: "User Authentication app in Ruby on Rails with Devise-JWT tutorial",
-    // image: "https://randomuser.me/api",
+    // image: "/images/block/user-authentication-app.svg",
     publishDate: "Nov 11, 2022",
     link: "https://benmukebo.medium.com/user-authentication-app-in-ruby-on-rails-with-devise-jwt-tutorial-adabebebd83e",
     description:
@@ -47,7 +47,7 @@ export const blockArticlesData: ArticleI[] = [
   {
     id: 5,
     title: "How to become a successful software developer",
-    // image: "https://randomuser.me/api",
+    // image: "/images/block/successful-software-developer.svg",
     publishDate: "Nov 13, 2021",
     link: "https://benmukebo.medium.com/how-to-become-a-successful-software-developer-6007a53d4deb",
     description:
@@ -56,10 +56,10 @@ export const blockArticlesData: ArticleI[] = [
   {
     id: 6,
     title: "Session Cookies vs. A Devise-JWT for Authenticating Users in Ruby on Rails",
-    // image: "https://randomuser.me/api",
+    // image: "/images/block/session-cookies-devise-jwt.svg",
     publishDate: "Aug 30, 2021",
     link: "https://benmukebo.medium.com/how-to-become-a-successful-software-developer-6007a53d4deb",
     description:
-      "This article will explain the differences between Devise-JWT and Sessions, as well as which one to use for authentication. Recently, I ha...",
+      "This article will explain the differences between Devise-JWT and Sessions, as well as which one to use for authentication. Recently, I had to implement authentication on one of the Rails projects I was assigned to work on...",
   },
 ];

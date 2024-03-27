@@ -26,7 +26,7 @@ export const BlogItem = ({ article }: BlogProps) => {
           <p className="text-14 leading-6 text-brand-foreground">
             {article.publishDate}
           </p>
-          <h3 className="header__h3">
+          <h3 className="header__h3 text-white-foreground">
             {article.title}
           </h3>
           <p className="text-lg text-white-light">
