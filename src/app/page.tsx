@@ -24,7 +24,7 @@ import {
 import { ProjectCardI, workedProjects } from "@/components/project-card/constants";
 
 function Home() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
   const isDarkMode: boolean = theme === Themes.Dark;
 
   const plugin = React.useRef(
@@ -47,7 +47,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="relative w-full bg-white-fade-5 border__fade__10 rounded-[32px]">
+        <div className="relative w-full card__backg__border rounded-[32px]">
           <div className="w-full max-w-[880px] h-[625px] mx-auto">
             {isDarkMode ? (
               <Image
@@ -104,7 +104,6 @@ function Home() {
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
-          {/* <ul className="w-full flex flex-wrap gap-4"> */}
           <CarouselContent className="">
             {testimonialsData.map((testimonial: TestimonialI, index) => (
               <CarouselItem key={index} className="md:basis-1/1 xl:basis-1/2">
@@ -112,7 +111,6 @@ function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* </ul> */}
           {/* <CarouselPrevious className="top-full right-1/3" />
           <CarouselNext className="top-full right-1/3" /> */}
         </Carousel>

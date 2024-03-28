@@ -8,7 +8,7 @@ type TestimonialProps = {
 
 export const Testimonial = ({ tertimonial }: TestimonialProps) => {
   return (
-    <li className="w-full max-w-[680px] mx-auto p-6 md:p-8 min-h-[320px] md:h-[380px] flex__column text-white-foreground border__fade__10 rounded-3xl">
+    <li className="w-full max-w-[680px] mx-auto p-6 md:p-8 min-h-[320px] md:h-[380px] flex__column card__backg__border rounded-3xl">
       {/* <div className="h-full flex__column text-white-foreground"> */}
       <p className="text-lg mb-6">
         {truncateString(tertimonial.text, 314)}

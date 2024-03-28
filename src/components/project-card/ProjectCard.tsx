@@ -10,7 +10,7 @@ type ProjectProps = {
 
 export const ProjectCard = ({ project }: ProjectProps) => {
   return (
-    <li className="w-full p-4 md:p-8 border__fade__10 rounded-[32px]">
+    <li className="w-full p-4 md:p-8 card__backg__border rounded-[32px]">
       <div className="flex__column gap-4 xl:flex-row-reverse">
         <div className="w-full h-[50vw] shrink-0  md:h-[476px] mx-auto xl:w-7/12 xl:h-[448px]"> {/*w-632 h-476 */}
           <Image
