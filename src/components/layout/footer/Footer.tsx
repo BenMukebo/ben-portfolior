@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MenuItemI, socialItems } from "../header/constants";
+import { NavMenuI, socialItems } from "../header/constants";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -31,7 +31,7 @@ export const Footer = () => {
 
         <div className="w-full flex__column items-center gap-4 xl:flex-row xl:justify-between">
           <ul className="flex__center gap-4 flex-wrap">
-            {socialItems.map((item: MenuItemI, index) => (
+            {socialItems.map((item: NavMenuI, index) => (
               <li key={index} className="text-xl leading-6 font-normal">
                 <Link
                   href={item.link}

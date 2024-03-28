@@ -10,7 +10,7 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Route } from "@/types/routes";
 import { Themes } from '@/enums/shared.enum';
 
-import { BlogItem, LetsTalk, Testimonial } from "@/components";
+import { BlogItem, LetsTalk, ProjectCard, Testimonial } from "@/components";
 import { ArticleI, blockArticlesData } from "@/components/blog-item/constants";
 import { TestimonialI, testimonialsData } from "@/components/testimonial/constants";
 
@@ -21,9 +21,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ProjectCardI, workedProjects } from "@/components/project-card/constants";
 
 function Home() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
   const isDarkMode: boolean = theme === Themes.Dark;
 
   const plugin = React.useRef(
@@ -46,7 +47,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="relative w-full bg-white-fade-5 border__fade__10 rounded-[32px]">
+        <div className="relative w-full card__backg__border rounded-[32px]">
           <div className="w-full max-w-[880px] h-[625px] mx-auto">
             {isDarkMode ? (
               <Image
@@ -103,7 +104,6 @@ function Home() {
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
-          {/* <ul className="w-full flex flex-wrap gap-4"> */}
           <CarouselContent className="">
             {testimonialsData.map((testimonial: TestimonialI, index) => (
               <CarouselItem key={index} className="md:basis-1/1 xl:basis-1/2">
@@ -111,7 +111,6 @@ function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* </ul> */}
           {/* <CarouselPrevious className="top-full right-1/3" />
           <CarouselNext className="top-full right-1/3" /> */}
         </Carousel>
@@ -135,6 +134,28 @@ function Home() {
         <ul className="w-full flex__column gap-8">
           {blockArticlesData.slice(0, 2).map((article: ArticleI) => (
             <BlogItem key={article.id} article={article} />
+          ))}
+        </ul>
+      </section>
+
+      <section className="w-full max-w-7xl mx-auto">
+        <div className="flex__between flex-wrap gap-1 mb-16">
+          <h2 className="header__h2 text-white-foreground">
+            Featured Works
+          </h2>
+
+          <Link
+            href={Route.WORK}
+            className="flex__center text-lg text-white-foreground p-4"
+          >
+            <span>View All Projects</span>
+            <ArrowTopRightIcon className="h-18 w-18" />
+          </Link>
+        </div>
+
+        <ul className="w-full max-w-5xl mx-auto flex__column gap-8 xl:max-w-none">
+          {workedProjects.slice(0, 2).map((project: ProjectCardI) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </ul>
       </section>

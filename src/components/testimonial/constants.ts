@@ -1,7 +1,7 @@
 export interface TestimonialI {
   id: number;
   name: string;
-  image: string;
+  image?: string;
   position: string;
   linkedIn: string;
   location: string;
@@ -13,7 +13,7 @@ export const testimonialsData: TestimonialI[] = [
     id: 1,
     name: "Cyril Iyadi",
     position: "Full - Stack Web Developer",
-    image: "https://randomuser.me/api",
+    // image: "https://randomuser.me/api",
     linkedIn: "https://www.linkedin.com/in/cyril-iyadi/",
     // "Lagos Mainland, Nigeria",
     location: "Lagos, Nigeria",
@@ -24,7 +24,7 @@ export const testimonialsData: TestimonialI[] = [
     id: 2,
     name: "Muhammad Sesay",
     position: "Experienced Full - Stack Develope",
-    image: "https://randomuser.me/api",
+    // image: "https://randomuser.me/api",
     linkedIn: "https://www.linkedin.com/in/muhammad-m-sesay/",
     // Freetown, Western Area, Sierra Leone
     location: "Freetown, Sierra Leone",
@@ -35,7 +35,7 @@ export const testimonialsData: TestimonialI[] = [
     id: 3,
     name: "Toluwase Ajise",
     position: "Full-Stack Software Developer",
-    image: "https://randomuser.me/api",
+    // image: "https://randomuser.me/api",
     linkedIn: "https://www.linkedin.com/in/toluwase-ajise/",
     location: "Lagos, Nigeria",
     text:
@@ -45,7 +45,7 @@ export const testimonialsData: TestimonialI[] = [
     id: 4,
     name: "Ahmed Al-Farouq",
     position: "Junior Cybersecurity Analyst",
-    image: "https://randomuser.me/api",
+    // image: "https://randomuser.me/api",
     linkedIn: "https://www.linkedin.com/in/ahmed-al-farouq/",
     location: "Al Buhayrah, Egypt",
     text:
@@ -55,7 +55,7 @@ export const testimonialsData: TestimonialI[] = [
     id: 5,
     name: "Juliana Ifionu",
     position: "Full - Stack Develope",
-    image: "https://randomuser.me/api",
+    // image: "https://randomuser.me/api",
     linkedIn: "https://www.linkedin.com/in/julianaifionu/",
     location: "Abuja, Nigeria",
     text:
@@ -65,7 +65,7 @@ export const testimonialsData: TestimonialI[] = [
     id: 6,
     name: "Clement Odai",
     position: "Co-Founder at RerdSystems Ltd",
-    image: "https://randomuser.me/api",
+    // image: "https://randomuser.me/api",
     linkedIn: "https://www.linkedin.com/in/vikers-jnr/",
     location: "Accra, Ghana",
     text:
@@ -75,7 +75,7 @@ export const testimonialsData: TestimonialI[] = [
     id: 7,
     name: "Francis Ugorji",
     position: "Software Developer",
-    image: "https://randomuser.me/api",
+    // image: "https://randomuser.me/api",
     linkedIn: "https://www.linkedin.com/in/francis-ugorji/",
     location: "Lagos, Nigeria",
     text:

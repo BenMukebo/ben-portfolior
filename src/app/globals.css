@@ -149,7 +149,7 @@
 }
 
 .header__h3 {
-  @apply text-32 leading-8 font-medium text-white-foreground;
+  @apply text-32 leading-8 font-medium;
 }
 .border__fade__5 {
   @apply border border-solid border-white-fade-5;
@@ -157,4 +157,8 @@
 
 .border__fade__10 {
   @apply border border-solid border-white-fade-10;
+}
+
+.card__backg__border {
+  @apply bg-white-fade-5 border__fade__10;
 }
