@@ -29,7 +29,7 @@ export const blockArticlesData: ArticleI[] = [
   {
     id: 3,
     title: "Preventing SQL Injection for Rails Queries",
-    // image: "/images/block/sql-injection.svg",
+    image: "/images/block/sql-injection.webp",
     publishDate: "Jan 21, 2023",
     link: "https://benmukebo.medium.com/how-to-prevent-sql-injection-writing-your-queries-in-rails-3b379cb8f17f",
     description:
@@ -38,7 +38,7 @@ export const blockArticlesData: ArticleI[] = [
   {
     id: 4,
     title: "User Authentication app in Ruby on Rails with Devise-JWT tutorial",
-    // image: "/images/block/user-authentication-app.svg",
+    image: "/images/block/user-authentication-app.webp",
     publishDate: "Nov 11, 2022",
     link: "https://benmukebo.medium.com/user-authentication-app-in-ruby-on-rails-with-devise-jwt-tutorial-adabebebd83e",
     description:
@@ -47,7 +47,7 @@ export const blockArticlesData: ArticleI[] = [
   {
     id: 5,
     title: "How to become a successful software developer",
-    // image: "/images/block/successful-software-developer.svg",
+    image: "/images/block/successful-software-developer.webp",
     publishDate: "Nov 13, 2021",
     link: "https://benmukebo.medium.com/how-to-become-a-successful-software-developer-6007a53d4deb",
     description:
