@@ -1,113 +1,169 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import Autoplay from "embla-carousel-autoplay";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
-export default function Home() {
+import { Route } from "@/types/routes";
+import { Themes } from '@/enums/shared.enum';
+
+import { BlogItem, LetsTalk, ProjectCard, Testimonial } from "@/components";
+import { ArticleI, blockArticlesData } from "@/components/blog-item/constants";
+import { TestimonialI, testimonialsData } from "@/components/testimonial/constants";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ProjectCardI, workedProjects } from "@/components/project-card/constants";
+
+function Home() {
+  const { theme, setTheme } = useTheme();
+  const isDarkMode: boolean = theme === Themes.Dark;
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false })
+  );
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex__column gap-16 md:gap-24 pt-12 pb-8 px-4 md:px-8 max-w-screen-xxxl mx-auto ">
+      <section className="w-full max-w-7xl mx-auto">
+        <div className="mb-16">
+          <h1 className="header__h1 pb-6 text-white-foreground">
+            Hello <span className="scale-y-110">👋</span> ! I am Ben Mukebo, a
+            full stack developer.
+          </h1>
+          <p className="text-white-light text-lg xl:text-xl">
+            I am here to help bring your digital ideas to life with a passion
+            for turning concepts into impactful digital experiences. Whether
+            it&apos;s building product features or creating dynamic websites,
+            I&apos;m here to make it happen.
+          </p>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="relative w-full card__backg__border rounded-[32px]">
+          <div className="w-full max-w-[880px] h-[625px] mx-auto">
+            {isDarkMode ? (
+              <Image
+                src="/images/ben-mukebo.svg"
+                alt="Picture of the author"
+                width={1000}
+                height={1000}
+                className="w-full h-full object-cover object-top rounded-bl-[32px] rounded-br-[32px]"
+              />
+            ) : (
+              <Image
+                src="/images/ben-mukebo-black.svg"
+                alt="Picture of the author Black"
+                width={1000}
+                height={1000}
+                className="w-full h-full object-cover object-top rounded-bl-[32px] rounded-br-[32px]"
+              />)}
+          </div>
+          <div className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] absolute top-6 right-2 md:w-[213px] md:h-[213px] md:top-9 md:right-9 xl:top-12 xl:right-14">
+            <Image
+              src="/images/floating-image.svg"
+              alt="Floating icon image"
+              width={1000}
+              height={1000}
+              className="rounded-full bg-white-light text-white-light"
+            />
+          </div>
+        </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* <Button>Click me</Button> */}
+      </section>
+
+      <section className="w-full max-w-7xl mx-auto">
+        <div className="flex__between flex-wrap gap-1 mb-16">
+          <h2 className="header__h2 text-white-foreground">Testimonial</h2>
+
+          <Link
+            href="https://www.linkedin.com/in/kasongo-mukebo-ben/details/recommendations/?detailScreenTabIndex=0"
+            className="flex__center text-lg text-white-foreground p-4"
+            target='_blank'
+          >
+            <span>View Recommendations</span>
+            <ArrowTopRightIcon className="h-18 w-18" />
+          </Link>
+        </div>
+
+        <Carousel
+          className="w-full max-w-7xl"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <CarouselContent className="">
+            {testimonialsData.map((testimonial: TestimonialI, index) => (
+              <CarouselItem key={index} className="md:basis-1/1 xl:basis-1/2">
+                <Testimonial tertimonial={testimonial} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {/* <CarouselPrevious className="top-full right-1/3" />
+          <CarouselNext className="top-full right-1/3" /> */}
+        </Carousel>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+      <section className="w-full max-w-7xl mx-auto">
+        <div className="flex__between flex-wrap gap-1 mb-16">
+          <h2 className="header__h2 text-white-foreground">
+            Personal Insights
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          <Link
+            href={Route.BLOG}
+            className="flex__center text-lg text-white-foreground p-4"
+          >
+            <span>Visit My Blog</span>
+            <ArrowTopRightIcon className="h-18 w-18" />
+          </Link>
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        <ul className="w-full flex__column gap-8">
+          {blockArticlesData.slice(0, 2).map((article: ArticleI) => (
+            <BlogItem key={article.id} article={article} />
+          ))}
+        </ul>
+      </section>
+
+      <section className="w-full max-w-7xl mx-auto">
+        <div className="flex__between flex-wrap gap-1 mb-16">
+          <h2 className="header__h2 text-white-foreground">
+            Featured Works
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+
+          <Link
+            href={Route.WORK}
+            className="flex__center text-lg text-white-foreground p-4"
+          >
+            <span>View All Projects</span>
+            <ArrowTopRightIcon className="h-18 w-18" />
+          </Link>
+        </div>
+
+        <ul className="w-full max-w-5xl mx-auto flex__column gap-8 xl:max-w-none">
+          {workedProjects.slice(0, 2).map((project: ProjectCardI) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </ul>
+      </section>
+
+      <LetsTalk />
+
+    </div>
   );
 }
+
+export default Home;
