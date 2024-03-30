@@ -1,4 +1,4 @@
-import { BlogItem, LetsTalk, Testimonial } from "@/components";
+import { BlogItem, LetsTalk } from "@/components";
 import { ArticleI, blockArticlesData } from "@/components/blog-item/constants";
 
 function Blog() {

@@ -11,20 +11,22 @@ export const Footer = () => {
             <p className="leading-8 text-white-light -tracking-[0.03em] mb-6 md:text-40">
               Connect with me
             </p>
-            <p className="leading-8 -tracking-[0.03em] break-all md:text-52 xl:text-60">
+            <p className="leading-8 -tracking-[0.03em] mb-4 break-all md:text-52 xl:text-60">
               l.benkasmukebo7@gmail.com
             </p>
             <p className="leading-8 -tracking-[0.03em] md:text-52 xl:text-60">
               +250 784 165 613
             </p>
           </div>
-
-          <Button
-            variant="ghost"
+          <Link
+            href="/files/BenMukeboResume.pdf"
+            target="_blank" download
+            rel="noopener noreferrer"
+            locale={false}
             className="text-3xl leading-8 font-medium my-4  md:text-40 text-brand-foreground"
           >
             Download CV
-          </Button>
+          </Link>
         </div>
 
         <div className="w-full h-[1px] my-8 md:my-10 xl:my-16 bg-white-fade-10" />
