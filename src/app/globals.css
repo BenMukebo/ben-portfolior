@@ -30,6 +30,7 @@
     --white-fade-15: #ffffff26;
 
     --black-foreground: #101010;
+    --black-light: #101010cc;
     --black-fade-5: #1010100d;
     --black-fade-10: #1010101a;
     --black-fade-15: #00000026;
@@ -68,7 +69,7 @@
 
     /* --white: #ffffff; */
     --white-foreground: var(--black-foreground);
-    --white-light: var(--black-foreground);
+    --white-light: var(--black-light);
     --white-fade-5: var(--black-fade-5);
     --white-fade-10: var(--black-fade-10);
 

@@ -67,6 +67,7 @@ const config = {
         black: {
           DEFAULT: "var(--black)",
           foreground: "var(--black-foreground)",
+          light: "var(--black-light)",
           "fade-5": "var(--black-fade-5)",
           "fade-15": "var(--black-fade-15)",
         },

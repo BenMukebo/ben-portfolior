@@ -31,8 +31,8 @@ export const Header = () => {
   // }
 
   return (
-    <header className="w-full sticky top-0 z-3 p-4 md:px-8">
-      <div className={cn("w-full max-w-7xl mx-auto h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15", {
+    <header className="w-full sticky top-0 z-3 p-4 md:px-8 backdrop-blur-md">
+      <div className={cn("w-full max-w-7xl mx-auto h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15 ", {
         // 'bg-white-fade-5': !isOpen,
         'h-auto xl:h-auto bg-secondary rounded-[32px]': isOpen,
       })}>
@@ -74,7 +74,7 @@ export const Header = () => {
                   </div>
                 ) : (
                   <div className="w-10 h-10 flex__center border__fade__10 rounded-full">
-                    <MoonIcon onClick={() => setTheme(Themes.Dark)} className="text-white-light w-6 h-6" />
+                    <MoonIcon onClick={() => setTheme(Themes.Dark)} className="text-black-foreground w-6 h-6" />
                   </div>
                 )}
 
