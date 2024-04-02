@@ -21,6 +21,7 @@ const config = {
       xs: '0',
       xm: '375px',
       sm: '480px',
+      smm: '600px',
       md: '768px',
       lg: '992px',
       xl: '1280px',
@@ -67,6 +68,7 @@ const config = {
         black: {
           DEFAULT: "var(--black)",
           foreground: "var(--black-foreground)",
+          light: "var(--black-light)",
           "fade-5": "var(--black-fade-5)",
           "fade-15": "var(--black-fade-15)",
         },
@@ -138,6 +140,16 @@ const config = {
       lineHeight: {
         52: '3.25rem',
         72: '4.5rem',
+      },
+      letterSpacing: {
+        tightest: '-0.075em',
+        tighter: '-0.05em',
+        common: '-0.03em',
+        tight: '-0.025em',
+        normal: '0',
+        wide: '0.025em',
+        wider: '0.05em',
+        widest: '0.1em',
       },
       spacing: {
         18: '1.125rem',

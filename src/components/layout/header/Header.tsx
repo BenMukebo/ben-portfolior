@@ -31,8 +31,8 @@ export const Header = () => {
   // }
 
   return (
-    <header className="w-full sticky top-0 z-3 p-4 md:px-8">
-      <div className={cn("w-full max-w-7xl mx-auto h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15", {
+    <header className="w-full sticky top-0 z-3 p-4 md:px-8 backdrop-blur-md">
+      <div className={cn("w-full max-w-7xl mx-auto h-72 xl:h-76 p-2 bg-white-fade-5 border__fade__10 rounded-[256px] shadow-border-15 ", {
         // 'bg-white-fade-5': !isOpen,
         'h-auto xl:h-auto bg-secondary rounded-[32px]': isOpen,
       })}>
@@ -67,25 +67,35 @@ export const Header = () => {
               </ul>
               {/* )} */}
 
-              <div className="hidden xl:flex ml-10">
+              <div className="hidden xl:flex items-center ml-10">
                 {isDarkMode ? (
                   <div className="w-10 h-10 flex__center border__fade__10 rounded-full">
                     <SunIcon onClick={() => setTheme(Themes.Light)} className='text-white-light w-6 h-6' />
                   </div>
                 ) : (
                   <div className="w-10 h-10 flex__center border__fade__10 rounded-full">
-                    <MoonIcon onClick={() => setTheme(Themes.Dark)} className="text-white-light w-6 h-6" />
+                    <MoonIcon onClick={() => setTheme(Themes.Dark)} className="text-black-foreground w-6 h-6" />
                   </div>
                 )}
 
-                <Button variant="ghost" className="text-white-foreground">
-                  Download CV
+                <Link
+                  href="/files/BenMukeboResume.pdf"
+                  target="_blank" // download
+                  rel="noopener noreferrer" // No need to download
+                  locale={false} // No need to download
+                  className="flex__center text-lg text-white-foreground p-4 hover:text-brand-foreground"
+                >
+                  <span>Download CV</span>
                   <ArrowTopRightIcon className="h-18 w-18" />
-                </Button>
-                <Button variant="ghost" className="text-white-foreground">
-                  Contact Me
+                </Link>
+
+                <Link
+                  href={Route.CONTACT}
+                  className="flex__center text-lg text-white-foreground p-4 hover:text-brand-foreground"
+                >
+                  <span>Contact Me</span>
                   <ArrowTopRightIcon className="h-18 w-18" />
-                </Button>
+                </Link>
               </div>
             </div>
           </nav>
@@ -161,13 +171,16 @@ export const Header = () => {
               <li className="text-lg font-normal text-white-foreground">
                 <p className="">+250 784 165 613</p>
               </li>
-              <li className="">
-                <Button
-                  variant="ghost"
-                  className="text-xl leading-6 font-medium text-brand-foreground"
+              <li className="text-xl leading-6 font-medium">
+                <Link
+                  href="/files/BenMukeboResume.pdf"
+                  target="_blank" download
+                  rel="noopener noreferrer"
+                  locale={false}
+                  className="text-brand-foreground"
                 >
                   Download CV
-                </Button>
+                </Link>
               </li>
             </ul>
           </div>

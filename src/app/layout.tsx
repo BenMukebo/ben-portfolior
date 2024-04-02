@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import { Header } from "@/components/layout/header/Header";
 import { Footer } from "@/components/layout/footer/Footer";
+import { Toaster } from "@/components/ui/toaster"
+
 import { Themes } from "@/enums/shared.enum";
 import "./globals.css";
 
@@ -35,6 +37,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <Toaster />
           </div>
         </ThemeProvider>
       </body>

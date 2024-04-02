@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -12,6 +12,7 @@ type BlogProps = {
 
 export const BlogItem = ({ article }: BlogProps) => {
   const route = useRouter();
+  // const placeholderUrl = usePlaceholderUrl();
 
   return (
     <li className="w-full p-6 md:p-8 card__backg__border rounded-3xl md:rounded-[32px]">
@@ -41,6 +42,8 @@ export const BlogItem = ({ article }: BlogProps) => {
             variant="secondary"
             size="lg"
             onClick={() => route.push(`${article.link}`)}
+          // className="w-[201px] h-52 p-2 text-xl gap-[2px] rounded-[256px]"
+          // onClick={() => route.push(`/blog/${article.slug}`)}
           >
             Have a read
             <ArrowTopRightIcon className="h-18 w-18" />

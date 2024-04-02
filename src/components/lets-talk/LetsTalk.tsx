@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button } from '../ui/button'
 
 export const LetsTalk = () => {
@@ -11,7 +10,6 @@ export const LetsTalk = () => {
 
         <Button
           variant="secondary"
-          // size="xxl"
           className="w-full h-[104px] p-8 text-5xl leading-10 font-medium -tracking-[0.03em] rounded-[256px] xl:text-88 md:h-[136px] xl:h-[216px]"
         >
           Lets Talk
