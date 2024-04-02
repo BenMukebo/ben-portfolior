@@ -103,7 +103,7 @@ function ContactForm() {
                     <FormLabel className="text-base xl:text-lg text-white-light">Name</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="Enter your Full Name"
+                        placeholder="Enter your Full name"
                         className="h-16 xl:h-[72px] input__field__style"
                         {...field}
                       />
@@ -137,10 +137,10 @@ function ContactForm() {
               name="message"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel className="text-lg xl:text-xl text-white-light">Message</FormLabel>
+                  <FormLabel className="text-base xl:text-lg text-white-light">Message</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Tell me all about the Project"
+                      placeholder="Tell me all about the Project..."
                       className="min-h-[180px]  input__field__style"
                       minLength={340}
                       {...field} />
