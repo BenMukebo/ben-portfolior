@@ -8,13 +8,13 @@ export const Footer = () => {
       <section className="w-full h-full max-w-7xl mx-auto">
         <div className="w-full flex__column items-start gap-4 xl:flex-row xl:items-center xl:justify-between">
           <div className="text-32 font-medium text-white-foreground">
-            <p className="leading-8 text-white-light -tracking-[0.03em] mb-6 md:text-40">
+            <p className="leading-8 text-white-light tracking-common mb-6 md:text-40">
               Connect with me
             </p>
-            <p className="leading-8 -tracking-[0.03em] mb-4 break-all md:text-52 xl:text-60">
+            <p className="leading-8 tracking-common mb-4 break-all md:text-52 xl:text-60">
               l.benkasmukebo7@gmail.com
             </p>
-            <p className="leading-8 -tracking-[0.03em] md:text-52 xl:text-60">
+            <p className="leading-8 tracking-common md:text-52 xl:text-60">
               +250 784 165 613
             </p>
           </div>

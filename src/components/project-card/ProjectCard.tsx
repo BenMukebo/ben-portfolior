@@ -23,7 +23,7 @@ export const ProjectCard = ({ project }: ProjectProps) => {
         </div>
 
         <div className="flex__column gap-4 xl:py-2"> {/*xl:py-6*/}
-          <h3 className="text-40 font-medium -tracking-[0.03em] text-white-foreground mb-4">
+          <h3 className="text-40 font-medium tracking-common text-white-foreground mb-4">
             {project.title}
           </h3>
           <p className="text-lg text-white-light">

@@ -141,6 +141,10 @@
   @apply flex flex-col;
 }
 
+.flex__column__center {
+  @apply flex flex-col items-center;
+}
+
 .header__h1 {
   @apply text-6xl font-bold -tracking-[0.03em] md:text-88 xl:text-112;
 }
@@ -162,4 +166,8 @@
 
 .card__backg__border {
   @apply bg-white-fade-5 border__fade__10;
+}
+
+.input__field__style {
+  @apply w-full text-xl leading-6 font-medium xl:text-2xl xl:leading-7 text-white-foreground p-4 md:p-4 tracking-common border__fade__10 rounded-2xl;
 }

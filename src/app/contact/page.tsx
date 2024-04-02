@@ -15,11 +15,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { toast } from "@/components/ui/use-toast"
+// import { ToastAction } from "@/components/ui/toast"
+// import { useToast } from "@/components/ui/use-toast"
 
-
-// const formSchema = z.object({
-//   username: z.string().min(2),
-// })
 type FormData = {
   name: string;
   email: string;
@@ -43,6 +42,8 @@ const FormSchema: ZodType<FormData> = z.object({
 })
 
 function ContactForm() {
+  // const { toast } = useToast()
+
   // 1. Define your form.
   // const { register, handleSubmit } = useForm({
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -59,6 +60,22 @@ function ContactForm() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(data)
+    toast({
+      title: "🥳 Your message has been sent 👍",
+      // description: "You submitted the following values:",
+      // description: (
+      //   <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+      //     <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+      //   </pre>
+      // ),
+    })
+
+    // toast({
+    //   variant: "destructive",
+    //   title: "😟 Uh oh! Something went wrong.",
+    //   description: "There was a problem with your request.",
+    //   action: <ToastAction altText="Try again">Try again</ToastAction>,
+    // })
   }
 
   return (
