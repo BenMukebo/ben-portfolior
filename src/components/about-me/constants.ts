@@ -1,9 +1,9 @@
-interface technologyI {
+export interface TechSkillsI {
   name: string;
   iconLogo: string;
 }
 
-export const languagesList: technologyI[] = [
+export const languagesList: TechSkillsI[] = [
   { name: "JavaScript", iconLogo: "/icons/javascript-original.svg" },
   { name: "Ruby", iconLogo: "/icons/ruby-original.svg" },
   { name: "TypeScript", iconLogo: "/icons/typescript-original.svg" },
@@ -13,7 +13,7 @@ export const languagesList: technologyI[] = [
   { name: "C++", iconLogo: "/icons/cplusplus-original.svg" },
 ];
 
-export const frameworksLibraries: technologyI[] = [
+export const frameworksLibraries: TechSkillsI[] = [
   { name: "Reactjs", iconLogo: "/icons/react-original-wordmark.svg" },
   { name: "Ruby on rails", iconLogo: "/icons/rails-plain-wordmark.svg" },
   { name: "Nextjs", iconLogo: "/icons/nextjs-original.svg" },
@@ -30,7 +30,7 @@ export const frameworksLibraries: technologyI[] = [
   { name: "Shadcn", iconLogo: "/icons/" },
 ];
 
-export const toolsList: technologyI[] = [
+export const toolsList: TechSkillsI[] = [
   { name: "Git", iconLogo: "/icons/git-original.svg" },
   { name: "GitHub", iconLogo: "/icons/github-original.svg" },
   { name: "Docker", iconLogo: "/icons/docker-original.svg" },
