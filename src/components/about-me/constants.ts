@@ -14,20 +14,20 @@ export const languagesList: TechSkillsI[] = [
 ];
 
 export const frameworksLibraries: TechSkillsI[] = [
-  { name: "Reactjs", iconLogo: "/icons/react-original-wordmark.svg" },
-  { name: "Ruby on rails", iconLogo: "/icons/rails-plain-wordmark.svg" },
-  { name: "Nextjs", iconLogo: "/icons/nextjs-original.svg" },
+  { name: "ReactJS", iconLogo: "/icons/react-original.svg" },
+  { name: "Ruby on Rails", iconLogo: "/icons/rails-plain-wordmark.svg" },
+  { name: "NextJS", iconLogo: "/icons/nextjs-original.svg" },
   { name: "React Native", iconLogo: "/icons/react-original.svg" },
   { name: "Redux", iconLogo: "/icons/redux-original.svg" },
-  { name: "React Query", iconLogo: "/icons/" },
+  { name: "React Query", iconLogo: "/icons/react-query-seeklogo.svg" },
   { name: "Sass", iconLogo: "/icons/sass-original.svg" },
   { name: "Tailwindcss", iconLogo: "/icons/tailwindcss-original.svg" },
-  { name: "PostgreSQL", iconLogo: "/icons/postgresql-original-wordmark.svg.svg" },
+  { name: "PostgreSQL", iconLogo: "/icons/postgresql-original.svg" },
   { name: "Supabase", iconLogo: "/icons/supabase-original.svg" },
   { name: "Rswag", iconLogo: "/icons/swagger-original.svg" },
   { name: "MySQL,", iconLogo: "/icons/mysql-original.svg" },
   { name: "MaterialUI", iconLogo: "/icons/materialui-original.svg" },
-  { name: "Shadcn", iconLogo: "/icons/" },
+  { name: "Shadcn", iconLogo: "/icons/shadcn-ui-seeklogo.svg" },
 ];
 
 export const toolsList: TechSkillsI[] = [
@@ -35,11 +35,57 @@ export const toolsList: TechSkillsI[] = [
   { name: "GitHub", iconLogo: "/icons/github-original.svg" },
   { name: "Docker", iconLogo: "/icons/docker-original.svg" },
   { name: "Figma", iconLogo: "/icons/figma-original.svg" },
-  { name: "Postman", iconLogo: "/icons/postgresql-plain.svg" },
+  { name: "Postman", iconLogo: "/icons/postman-original.svg" },
   { name: "Heroku", iconLogo: "/icons/heroku-original.svg" },
-  { name: "TDD", iconLogo: "/icons/" },
-  { name: "React testing", iconLogo: "/icons/" },
-  { name: "Jest", iconLogo: "/icons/" },
-  { name: "RSpec", iconLogo: "/icons/" },
-  { name: "Capybara,", iconLogo: "/icons/" },
+  { name: "Jest", iconLogo: "/icons/jest-plain.svg" },
+  { name: "RSpec", iconLogo: "/icons/rspec-original.svg" },
+];
+
+
+export const greatExperience: { name: string; percentage: number }[] = [
+  {
+    name: "Product design",
+    percentage: 90,
+  },
+  {
+    name: "Algo & Problem solving",
+    percentage: 70,
+  },
+  {
+    name: "Mobile/Responsive",
+    percentage: 90,
+  },
+  {
+    name: "API integration",
+    percentage: 85,
+  },
+  // {
+  //   name: "Automated Testing",
+  //   percentage: 85,
+  // },
+  {
+    name: "SEO & Performance",
+    percentage: 80,
+  },
+  // {
+  //   name: "Accessibility",
+  //   percentage: 80,
+  // },
+  // {
+  //   name: "Scalability",
+  //   percentage: 80,
+  // },
+  // {
+  //   name: "Documentation",
+  //   percentage: 80,
+  // },
+  // {
+  // {
+  //   name: "Code review",
+  //   percentage: 80,
+  // },
+  // {
+  //   name: "Code refactoring / optimization",
+  //   percentage: 80,
+  // },
 ];
