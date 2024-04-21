@@ -1,8 +1,8 @@
 import React from 'react';
 import { Slider } from "@/components/ui/slider"
 
-import SlideTechSkills from "./slide-tech-skills/SlideTechSkills";
 import { frameworksLibraries, greatExperience, languagesList, toolsList } from "./constants";
+import CarouselSlideTechStack from './carousel-slide/CarouselSlideTechStack';
 
 // import { EmblaOptionsType } from "embla-carousel";
 
@@ -56,7 +56,7 @@ export const AboutMe = () => {
             Languages
           </h4>
 
-          <SlideTechSkills skills={languagesList} />
+          <CarouselSlideTechStack skills={languagesList} />
         </article>
 
         <article className="mb-5">
@@ -64,7 +64,7 @@ export const AboutMe = () => {
             Labraries & <span className="text-brand-foreground">Frameworks</span>
           </h4>
 
-          <SlideTechSkills skills={frameworksLibraries} />
+          <CarouselSlideTechStack skills={frameworksLibraries} />
         </article>
 
         <article className="mb-5">
@@ -72,7 +72,7 @@ export const AboutMe = () => {
             Development Tools
           </h4>
 
-          <SlideTechSkills skills={toolsList} />
+          <CarouselSlideTechStack skills={toolsList} />
         </article>
       </div>
     </div >

@@ -19,7 +19,7 @@ type PropType = {
   options?: EmblaOptionsType;
 };
 
-const SlideTechSkills = ({ skills }: PropType) => {
+const CarouselSlideTechStack = ({ skills }: PropType) => {
   // const [emblaRef, emblaApi] = useEmblaCarousel(
   // { align: 'start', slidesToScroll: 'auto', loop: true }, [Autoplay()]);
 
@@ -88,7 +88,7 @@ const SlideTechSkills = ({ skills }: PropType) => {
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={"embla__dot".concat( //  even:hidden smm:last:flex smm:even:flex
+              className={"embla__dot".concat( // even:hidden smm:last:flex smm:even:flex
                 index === selectedIndex ? " embla__dot--selected" : ""
               )}
             />
@@ -99,4 +99,4 @@ const SlideTechSkills = ({ skills }: PropType) => {
   );
 };
 
-export default SlideTechSkills;
+export default CarouselSlideTechStack;
