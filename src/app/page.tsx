@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -10,7 +10,7 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Route } from "@/types/routes";
 import { Themes } from '@/enums/shared.enum';
 
-import { BlogItem, LetsTalk, ProjectCard, Testimonial } from "@/components";
+import { AboutMe, BlogItem, LetsTalk, ProjectCard, Testimonial } from "@/components";
 import { ArticleI, blockArticlesData } from "@/components/blog-item/constants";
 import { TestimonialI, testimonialsData } from "@/components/testimonial/constants";
 
@@ -23,11 +23,12 @@ import {
 } from "@/components/ui/carousel";
 import { ProjectCardI, workedProjects } from "@/components/project-card/constants";
 
+
 function Home() {
   const { theme, setTheme } = useTheme();
   const isDarkMode: boolean = theme === Themes.Dark;
 
-  const plugin = React.useRef(
+  const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
 
@@ -76,8 +77,16 @@ function Home() {
             />
           </div>
         </div>
+      </section>
 
-        {/* <Button>Click me</Button> */}
+      <section id="about" className="w-full max-w-7xl mx-auto">
+        <div className="mb-16">
+          <h2 className="header__h2 text-white-foreground">
+            About Me
+          </h2>
+        </div>
+
+        <AboutMe />
       </section>
 
       <section className="w-full max-w-7xl mx-auto">

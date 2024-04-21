@@ -72,6 +72,7 @@
     --white-light: var(--black-light);
     --white-fade-5: var(--black-fade-5);
     --white-fade-10: var(--black-fade-10);
+    --white-fade-15: var(--black-fade-15);
 
     --black-fade-15: var(--white-fade-15);
 
@@ -156,6 +157,7 @@
 .header__h3 {
   @apply text-32 leading-8 font-medium;
 }
+
 .border__fade__5 {
   @apply border border-solid border-white-fade-5;
 }
@@ -170,4 +172,26 @@
 
 .input__field__style {
   @apply w-full text-xl leading-6 font-medium xl:text-2xl xl:leading-7 text-white-foreground p-4 md:p-4 tracking-common border__fade__10 rounded-2xl;
+}
+
+.embla__dots {
+  @apply flex-wrap justify-end items-center;
+}
+/* margin-right: calc((2.6rem - 1.4rem) / 2 * -1); */
+
+.embla__dot {
+  @apply w-7 h-7 flex__center text-white-foreground md:w-7 md:h-7 rounded-full appearance-none bg-transparent border-0;
+}
+
+.embla__dot:after {
+  box-shadow: inset 0 0 0 0.2rem var(--white-fade-10);
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  content: "";
+}
+.embla__dot--selected:after {
+  box-shadow: inset 0 0 0 0.2rem var(--white-light);
 }
