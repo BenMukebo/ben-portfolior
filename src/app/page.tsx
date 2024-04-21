@@ -77,11 +77,9 @@ function Home() {
             />
           </div>
         </div>
-
-        {/* <Button>Click me</Button> */}
       </section>
 
-      <section className="w-full max-w-7xl mx-auto">
+      <section id="about" className="w-full max-w-7xl mx-auto">
         <div className="mb-16">
           <h2 className="header__h2 text-white-foreground">
             About Me
