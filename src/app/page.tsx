@@ -83,7 +83,7 @@ function Home() {
 
       <section className="w-full max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="header__h2 text-white-foreground pb-6">
+          <h2 className="header__h2 text-white-foreground">
             About Me
           </h2>
         </div>
