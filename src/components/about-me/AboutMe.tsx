@@ -15,8 +15,8 @@ import CarouselSlideTechStack from './carousel-slide/CarouselSlideTechStack';
 export const AboutMe = () => {
 
   return (
-    <div className="flex__column__center gap-8  xl:flex-row xl:justify-between xl:items-stretch">
-      <div className="w-full max-w-3xl xl:w-[45%] grow-0">
+    <div className="flex__column__center gap-8 xl:flex-row xl:justify-between xl:items-stretch">
+      <div className="w-full max-w-3xl xl:w-[45%] grow-0 xl:max-w-lg">
         <h3 className="text-40 font-medium tracking-common text-white-foreground mb-4">
           {/* My Mission to develop */}
           Great Experience
@@ -26,10 +26,10 @@ export const AboutMe = () => {
           animations and creating intuitive, dynamic user experiences.
         </p>
 
-        <ul className="w-full flex__column gap-7">
+        <ul className="w-full flex__column gap-7 px-1">
           {greatExperience.map((expereince, index) => (
             <li key={index} className="">
-              <div className="flex__between text-white-foreground mb-3">
+              <div className="flex__between text-white-foreground mb-2">
                 <h5 className="text-lg">
                   {expereince.name}</h5>
                 <p className="text-base">
