@@ -1,5 +1,10 @@
+import { Metadata } from 'next';
 import { BlogItem, LetsTalk } from "@/components";
 import { ArticleI, blockArticlesData } from "@/components/blog-item/constants";
+
+export const metadata: Metadata = {
+  title: "My Blog",
+};
 
 function Blog() {
   return (
