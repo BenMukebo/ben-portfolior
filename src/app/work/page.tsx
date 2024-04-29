@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import { LetsTalk, ProjectCard } from "@/components";
 import { ProjectCardI, workedProjects } from "@/components/project-card/constants";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 function Work() {
   return (

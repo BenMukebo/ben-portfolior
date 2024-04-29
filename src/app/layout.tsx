@@ -13,8 +13,17 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ben Mukebo",
-  description: "I am here to help bring your digital ideas to life with a passion for turning concepts into impactful digital experiences. Whether it's building product features or creating dynamic websites, I'm here to make it happen.",
+  title: {
+    default: "Ben Mukebo | Full-Stack Developer",
+    template: "%s | Ben Mukebo",
+  },
+  description: "Full-Stack Developer with a strong affinity for mobile-friendly, responsive design and remote work. With over 4 years of industry experience.",
+  twitter: {
+    card: "summary_large_image",
+    site: "@benmukebo",
+    creator: "@benmukebo",
+  },
+
   icons: ['favicon.ico', 'favicon.svg', 'favicon-16x16.png', 'favicon-32x32.png'],
 };
 
