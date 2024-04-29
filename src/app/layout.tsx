@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -24,6 +25,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></Script>
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
@@ -41,7 +55,7 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
       </body>
-    </html>
+    </html >
   );
 }
 // min-h-screen
