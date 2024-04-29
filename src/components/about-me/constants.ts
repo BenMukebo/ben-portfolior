@@ -22,10 +22,10 @@ export const frameworksLibraries: TechSkillsI[] = [
   { name: "React Query", iconLogo: "/icons/react-query-seeklogo.svg" },
   { name: "Sass", iconLogo: "/icons/sass-original.svg" },
   { name: "Tailwindcss", iconLogo: "/icons/tailwindcss-original.svg" },
-  { name: "PostgreSQL", iconLogo: "/icons/postgresql-original.svg" },
   { name: "Supabase", iconLogo: "/icons/supabase-original.svg" },
-  { name: "Rswag", iconLogo: "/icons/swagger-original.svg" },
+  { name: "PostgreSQL", iconLogo: "/icons/postgresql-original.svg" },
   { name: "MySQL,", iconLogo: "/icons/mysql-original.svg" },
+  { name: "Rswag", iconLogo: "/icons/swagger-original.svg" },
   { name: "MaterialUI", iconLogo: "/icons/materialui-original.svg" },
   { name: "Shadcn", iconLogo: "/icons/shadcn-ui-seeklogo.svg" },
 ];

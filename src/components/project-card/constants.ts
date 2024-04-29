@@ -9,13 +9,13 @@ export interface ProjectCardI {
 
 export const workedProjects: ProjectCardI[] = [
   {
-    title: "Sweet Aromas",
-    image: "/images/projects/sweet-aromas.png",
+    title: "Primus Learning",
+    image: "/images/projects/primuslearning.png",
     description:
-      "Sweet~aromas is a Recipes catalog that provides instructions for preparing and producing a certain food, dish, or drink. The purpose of a recipe is to have a precise record of the ingredients used, the amounts needed, and the way they are combined.",
-    techStack: ["React", "Redux", "Context API", "Ruby on Rails"],
-    demoLink: "https://sweet-aromas.netlify.app/",
-    sourceCodeLink: "https://github.com/BenMukebo/sweet-aromas",
+      "Primus Learning is a platform that offers Cloud, DevOps and Other IT Courses tailored to taking IT and non IT professionals from Zero to Hero.",
+    techStack: ["NextJS", "Redux", "Context API", "React-Query", "Tailwindcss"],
+    demoLink: "https://primuslearning.io/",
+    sourceCodeLink: "#",
   },
   {
     title: "Kawira safaris LTD",
@@ -25,6 +25,15 @@ export const workedProjects: ProjectCardI[] = [
     techStack: ["React", "Tailwindcss", "scss"],
     demoLink: "https://kawirasafaris.netlify.app/",
     sourceCodeLink: "#",
+  },
+  {
+    title: "Sweet Aromas",
+    image: "/images/projects/sweet-aromas.png",
+    description:
+      "Sweet~aromas is a Recipes catalog that provides instructions for preparing and producing a certain food, dish, or drink. The purpose of a recipe is to have a precise record of the ingredients used, the amounts needed, and the way they are combined.",
+    techStack: ["React", "Redux", "Context API", "Ruby on Rails"],
+    demoLink: "https://sweet-aromas.netlify.app/",
+    sourceCodeLink: "https://github.com/BenMukebo/sweet-aromas",
   },
   {
     title: "Ritach",

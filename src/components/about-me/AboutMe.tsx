@@ -1,22 +1,17 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { Slider } from "@/components/ui/slider"
-
 import { frameworksLibraries, greatExperience, languagesList, toolsList } from "./constants";
 import CarouselSlideTechStack from './carousel-slide/CarouselSlideTechStack';
 
-// import { EmblaOptionsType } from "embla-carousel";
-
-// import EmblaCarousel from "../ui/EmblaCarousel";
-// const OPTIONS: EmblaOptionsType = { slidesToScroll: 'auto' }
-// const SLIDE_COUNT = 6
-// const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-
+export const metadata: Metadata = {
+  title: "About Me",
+};
 
 export const AboutMe = () => {
-
   return (
-    <div className="flex__column__center gap-8  xl:flex-row xl:justify-between xl:items-stretch">
-      <div className="w-full max-w-3xl xl:w-[45%] grow-0">
+    <div className="flex__column__center gap-8 xl:flex-row xl:justify-around xl:items-stretch xxl:justify-between">
+      <div className="w-full max-w-3xl xl:w-[45%] grow-0 xl:max-w-lg">
         <h3 className="text-40 font-medium tracking-common text-white-foreground mb-4">
           {/* My Mission to develop */}
           Great Experience
@@ -26,10 +21,10 @@ export const AboutMe = () => {
           animations and creating intuitive, dynamic user experiences.
         </p>
 
-        <ul className="w-full flex__column gap-7">
+        <ul className="w-full flex__column gap-7 px-1">
           {greatExperience.map((expereince, index) => (
             <li key={index} className="">
-              <div className="flex__between text-white-foreground mb-3">
+              <div className="flex__between text-white-foreground mb-2">
                 <h5 className="text-lg">
                   {expereince.name}</h5>
                 <p className="text-base">
